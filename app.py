@@ -1,6 +1,7 @@
 import json
 from urllib.request import urlopen
 from flask import Flask, jsonify
+
 app = Flask(__name__)
 
 @app.route("/api/plus/<int:a>/<int:b>")
@@ -33,5 +34,7 @@ def call_ws(op, a, b):
             result = resp["result"] #change to return a value
     # Return the result
     return result
+
+
 if __name__ == "__main__":
     app.run()
